@@ -17,9 +17,11 @@ func trap(height []int) int {
 		rightMax = max(rightMax, height[r])
 		if leftMax < rightMax {
 			res += leftMax - height[l]
+			// fmt.Println("leftMax:", leftMax, "rightMax:", rightMax, "h[l]", height[l], "cur", leftMax-height[l])
 			l++
 		} else {
 			res += rightMax - height[r]
+			// fmt.Println("leftMax:", leftMax, "rightMax:", rightMax, "h[r]", height[r], "cur", rightMax-height[r])
 			r--
 		}
 	}
